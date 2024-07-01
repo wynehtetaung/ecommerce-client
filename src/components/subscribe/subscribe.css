@@ -1,0 +1,161 @@
+.subscribe {
+  width: 65%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 0px 140px;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+  gap: 30px;
+}
+.subscribe h1 {
+  color: #454545;
+  font-size: 55px;
+  padding-top: 80px;
+}
+.subscribe p {
+  color: #454545;
+  font-size: 20px;
+}
+.input_box {
+  display: flex;
+  width: 730px;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid #e3e3e3;
+  border-radius: 80px;
+}
+.input_box input {
+  width: 500px;
+  margin-left: 30px;
+  border: none;
+  outline: none;
+  color: #616161;
+  font-size: 16px;
+}
+.input_box button {
+  width: 210px;
+  height: 70px;
+  border-radius: 80px;
+  background: #2a2929;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  border: none;
+
+  box-shadow: none;
+}
+.input_box button:active {
+  background: #807f7f;
+  color: #2a2929;
+}
+
+@media (max-width: 1280px) {
+  .subscribe {
+    padding: 0px 80px;
+    margin-bottom: 120px;
+    gap: 20px;
+  }
+  .subscribe h1 {
+    padding-top: 0;
+    font-size: 36px;
+  }
+  .subscribe p {
+    font-size: 16px;
+  }
+  .input_box {
+    width: 600px;
+    height: 60px;
+  }
+  .input_box input {
+    width: 400px;
+  }
+  .input_box button {
+    width: 160px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .subscribe {
+    margin-bottom: 60px;
+  }
+  .subscribe h1 {
+    padding-top: 0;
+    font-size: 30px;
+  }
+  .subscribe p {
+    font-size: 14px;
+  }
+  .input_box {
+    width: 500px;
+    height: 50px;
+  }
+  .input_box input {
+    width: 300px;
+    font-size: 14px;
+  }
+  .input_box button {
+    width: 120px;
+    height: 50px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .subscribe {
+    margin-bottom: 30px;
+    height: 35vh;
+  }
+  .subscribe h1 {
+    padding-top: 0;
+    font-size: 18px;
+  }
+  .subscribe p {
+    font-size: 12px;
+  }
+  .input_box {
+    width: 400px;
+    height: 40px;
+  }
+  .input_box input {
+    width: 200px;
+    font-size: 13px;
+  }
+  .input_box button {
+    width: 100px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .subscribe {
+    height: 25vh;
+    width: 100%;
+    padding: 0;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .subscribe h1 {
+    padding-top: 0;
+    font-size: 16px;
+  }
+  .subscribe p {
+    font-size: 13px;
+    max-width: 200px;
+    text-align: center;
+  }
+  .input_box {
+    width: 290px;
+  }
+  .input_box input {
+    width: 130px;
+  }
+}
