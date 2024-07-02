@@ -110,9 +110,12 @@ export default function ProductsProvider({ children }) {
       quantity: Number(quantity),
     };
     if (checkSize) {
-      alert(
-        "This item has the same type and size, so the quantity has been increased"
-      );
+      setTimeout(() => {
+        Warning(
+          "info",
+          "This item has the same type and size, so the quantity has been increased!"
+        );
+      }, 3000);
     }
     (async () => {
       const res = await fetch(
@@ -130,6 +133,7 @@ export default function ProductsProvider({ children }) {
       );
       const { data } = await res.json();
       Toast("success", "Added Cart!", 2000);
+
       setCartItems(data.cartData);
     })();
   };

@@ -6,7 +6,6 @@ import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import SingUp from "./pages/SignUp";
 import Login from "./pages/Login";
-import NewCollection from "./components/new_collection/NewCollection";
 import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([

@@ -5,6 +5,7 @@ import dropdown_icon from "../assets/dropdown_icon.png";
 import { UseProducts } from "../context/ProductsProvider";
 import { UseUiState } from "../context/UiStateProvider";
 import { useEffect, useState } from "react";
+import { Warning } from "../components/alert_message/Warning";
 
 export default function Category() {
   const { type } = useParams();
@@ -47,7 +48,12 @@ export default function Category() {
           <span>Showing 1-{more ? filterProduct.length : show.length} </span>out
           of {filterProduct.length} products
         </p>
-        <div className="category_sort_btn">
+        <div
+          onClick={() => {
+            Warning("info", "Not Available!");
+          }}
+          className="category_sort_btn"
+        >
           Sort by <img src={dropdown_icon} />
         </div>
       </div>
@@ -70,9 +76,13 @@ export default function Category() {
               }
             })}
       </div>
-      <div onClick={moreHandler} className="product_show_more">
-        {more ? "Explore Less" : "Explore More"}
-      </div>
+      {show.length < 7 ? (
+        ""
+      ) : (
+        <div onClick={moreHandler} className="product_show_more">
+          {more ? "Explore Less" : "Explore More"}
+        </div>
+      )}
     </div>
   );
 }

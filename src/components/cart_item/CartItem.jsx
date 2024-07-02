@@ -8,6 +8,7 @@ import deliveryIcon from "../../assets/delivery-truck.png";
 import { Toast } from "../alert_message/Toast";
 import { Warning } from "../alert_message/Warning";
 import { useUsers } from "../../context/UsersProvider";
+import { DeletePopUp } from "../alert_message/DeletePopUp";
 
 export default function CartItem({ cartItems }) {
   const navigate = useNavigate();
@@ -44,8 +45,13 @@ export default function CartItem({ cartItems }) {
               <img
                 className="remove_item_icon"
                 src={remove_icon}
-                onClick={() => {
-                  removeFromCart(product.pid);
+                onClick={async () => {
+                  const result = await DeletePopUp();
+                  if (result) {
+                    removeFromCart(product.pid);
+                  } else {
+                    return false;
+                  }
                 }}
               />
             </div>
