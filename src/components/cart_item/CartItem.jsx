@@ -112,7 +112,13 @@ export default function CartItem({ cartItems }) {
           <p>If You have a promo code, Enter it here</p>
           <div className="promo_code_box">
             <input type="text" placeholder="promo code" />
-            <button>Submit</button>
+            <button
+              onClick={() => {
+                Warning("info", "Not Available!");
+              }}
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>
