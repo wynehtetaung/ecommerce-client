@@ -18,6 +18,7 @@ export default function SignUp() {
   const GoogleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
+        Loading("Please Wait!");
         const res = await fetch(
           "https://www.googleapis.com/oauth2/v3/userinfo",
           {
@@ -26,7 +27,6 @@ export default function SignUp() {
             },
           }
         );
-        Loading("Please Wait!");
         const { sub, name, picture, email, email_verified } = await res.json();
         (async () => {
           const res = await fetch(

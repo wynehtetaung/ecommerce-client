@@ -20,6 +20,7 @@ export default function Login() {
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
+        Loading("Please Wait!");
         const res = await fetch(
           "https://www.googleapis.com/oauth2/v3/userinfo",
           {
@@ -28,7 +29,7 @@ export default function Login() {
             },
           }
         );
-        Loading("Please Wait!");
+
         const { sub, email } = await res.json();
         (async () => {
           const res = await fetch(
