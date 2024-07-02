@@ -17,7 +17,6 @@ export default function SignUp() {
 
   const GoogleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
-      console.log(tokenResponse);
       try {
         const res = await fetch(
           "https://www.googleapis.com/oauth2/v3/userinfo",
@@ -27,9 +26,9 @@ export default function SignUp() {
             },
           }
         );
+        Loading("Please Wait!");
         const { sub, name, picture, email, email_verified } = await res.json();
         (async () => {
-          Loading("Please Wait!");
           const res = await fetch(
             "https://ecommerce-project-api-s1c9.onrender.com/api/v1/user/register",
             {

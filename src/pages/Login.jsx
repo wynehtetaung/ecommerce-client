@@ -28,9 +28,9 @@ export default function Login() {
             },
           }
         );
+        Loading("Please Wait!");
         const { sub, email } = await res.json();
         (async () => {
-          Loading("Please Wait!");
           const res = await fetch(
             "https://ecommerce-project-api-s1c9.onrender.com/api/v1/user/login",
             {
